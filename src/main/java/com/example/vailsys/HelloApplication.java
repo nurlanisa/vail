@@ -3,8 +3,7 @@ package com.example.vailsys;
 import java.util.Arrays;
 
 public class HelloApplication {
-
-
+    
     public static void main(String[] args) throws Exception {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7};
 
@@ -16,15 +15,15 @@ public class HelloApplication {
     This function to rotate array of size by given rotate number
      */
     public static int[] rotate(int[] arr, int rotateNumber) throws Exception {
-        if (rotateNumber < 1) {
+        if (rotateNumber < 0) {
             /*
             I wasn't sure what it's mean on throwing an error
             which the code example should handle gracefully.
             But hopefully throwing Exception with right message is enough :)
             */
-            throw new Exception("Rotating number: " + rotateNumber + "should be positive number");
+            throw new Exception("Rotating number should be positive number. Please try again!");
         } else {
-            if (arr.length == 1 | rotateNumber == 1) return arr;
+            if (arr.length == 0 | rotateNumber == 1) return arr;
             else {
 
                 /* in case rotate number bigger than array length */
